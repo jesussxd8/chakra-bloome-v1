@@ -1,0 +1,30 @@
+/*
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-jsBpOYB+Y3OuWuurMm8bUbqegWjAVE3rC4br0yfwZS8='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; worker-src 'self'; frame-src https://www.google.com; frame-ancestors 'none'; form-action 'self'; manifest-src 'self'; media-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  X-Permitted-Cross-Domain-Policies: none
+  Strict-Transport-Security: max-age=31536000
+
+/assets/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/styles.css
+  Cache-Control: public, max-age=604800
+
+/app.js
+  Cache-Control: public, max-age=604800
+
+/i18n.js
+  Cache-Control: public, max-age=604800
+
+/404.js
+  Cache-Control: public, max-age=604800
+
+/sw.js
+  Cache-Control: no-cache
+
+/manifest.webmanifest
+  Cache-Control: public, max-age=86400

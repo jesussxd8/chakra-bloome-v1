@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chakracoffeebrunch.github.io/sitemap.xml
