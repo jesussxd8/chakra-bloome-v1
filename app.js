@@ -119,98 +119,277 @@
     ['bowls','Bowls'],['tostas','Tostas & Sandwiches'],['huevos','Huevos'],['dulce','Dulce & Combo']
   ];
 
+
   const categoryMeta = {
-    all:{title:'Toda la carta', intro:'Una vista general de Chakra: cafés, jugos, bowls, tostas, huevos, dulces y combos.', note:'Todos los precios se han tomado de la carta facilitada e incluyen IGIC.', image:'assets/img/combo-board.webp'},
-    cafe:{title:'Café 100% arábico', intro:'Expresos, flat white, chai, golden milk y cafés calientes o iced para cualquier momento del día.', note:'Leches vegetales disponibles y opción de coco con suplemento.', image:'assets/img/latte.webp'},
-    matcha:{title:'Matcha & Ube Lovers', intro:'Matcha, ube y tés e infusiones para quienes buscan color, ritual y algo diferente.', note:'Incluye opciones iced y combinaciones de vainilla, caramelo, fresa, mango o maracuyá.', image:'assets/img/matcha-orange.webp'},
-    bebidas:{title:'Jugos & bebidas', intro:'Zumos naturales y bebidas frías elaboradas con frutas y verduras frescas de temporada.', note:'Desde el zumo de naranja recién exprimido hasta las combinaciones Chakra Sacro, Raíz, Corazón, Manipura y Tropical.', image:'assets/img/juice-board.webp'},
-    bowls:{title:'Bowls', intro:'Açaí, bowl blanco y yogur natural con fruta, granola y toppings para desayunos frescos y completos.', note:'Las frutas decorativas pueden variar según temporada.', image:'assets/img/bowl-acai.webp'},
-    tostas:{title:'Tostas & sandwiches', intro:'Masa madre, brioche y croissant con propuestas saladas muy visuales.', note:'Se ofrece pan sin gluten con aviso de posible contaminación cruzada.', image:'assets/img/toast-tricolor-horizontal.webp'},
-    huevos:{title:'Huevos', intro:'Benedict, revueltos, english breakfast y otras opciones contundentes para brunch.', note:'Puedes añadir extras como aguacate, bacon, ibérico o salmón según la carta.', image:'assets/img/trio-eggs.webp'},
-    dulce:{title:'Dulce & combo', intro:'Pancakes dulces y salados, además del menú combo para mezclar y combinar.', note:'Perfecto para un brunch largo, compartido o para dejarse llevar por el antojo.', image:'assets/img/pancakes-sweet.webp'}
+    all:{title:'Toda la carta',intro:'Una vista general de Chakra: cafés, jugos, bowls, tostas, huevos, dulces y combos.',note:'Todos los precios se han tomado de la carta facilitada e incluyen IGIC.',image:'assets/img/combo-board.webp'},
+    cafe:{title:'Café 100% arábico',intro:'Expresos, flat white, chai, golden milk y cafés calientes o iced para cualquier momento del día.',note:'Leches vegetales disponibles y opción de coco con suplemento.',image:'assets/img/latte.webp'},
+    matcha:{title:'Matcha & Ube Lovers',intro:'Matcha, ube y tés e infusiones para quienes buscan color, ritual y algo diferente.',note:'Incluye opciones iced y combinaciones de vainilla, caramelo, fresa, mango o maracuyá.',image:'assets/img/matcha-orange.webp'},
+    bebidas:{title:'Jugos & bebidas',intro:'Zumos naturales y bebidas frías elaboradas con frutas y verduras frescas de temporada.',note:'Desde el zumo de naranja recién exprimido hasta las combinaciones Chakra Sacro, Raíz, Corazón, Manipura y Tropical.',image:'assets/img/juice-board.webp'},
+    bowls:{title:'Bowls',intro:'Açaí, bowl blanco y yogur natural con fruta, granola y toppings para desayunos frescos y completos.',note:'Las frutas decorativas pueden variar según temporada.',image:'assets/img/bowl-acai.webp'},
+    tostas:{title:'Tostas & sandwiches',intro:'Masa madre, brioche y croissant con propuestas saladas muy visuales.',note:'Se ofrece pan sin gluten con aviso de posible contaminación cruzada.',image:'assets/img/toast-tricolor-horizontal.webp'},
+    huevos:{title:'Huevos',intro:'Benedict, revueltos, english breakfast y otras opciones contundentes para brunch.',note:'Puedes añadir extras como aguacate, bacon, ibérico o salmón según la carta.',image:'assets/img/trio-eggs.webp'},
+    dulce:{title:'Dulce & combo',intro:'Pancakes dulces y salados, además del menú combo para mezclar y combinar.',note:'Perfecto para un brunch largo, compartido o para dejarse llevar por el antojo.',image:'assets/img/pancakes-sweet.webp'}
+  };
+
+  const groupKickers = {
+    cafe:'Cafés y lattes',matcha:'Matcha, ube y tés',bebidas:'Jugos naturales y bebidas',bowls:'Fruta, granola y superfoods',
+    tostas:'Tostas, croissants y sandwiches',huevos:'Brunch con huevo',dulce:'Algo dulce y combos'
   };
 
   const itemThumbs = {
-    'Cappuccino':'assets/img/latte.webp',
-    'Flat White':'assets/img/latte.webp',
-    'Café con Leche':'assets/img/latte.webp',
     'Iced Matcha Orange':'assets/img/matcha-orange.webp',
-    'Matcha':'assets/img/matcha-orange.webp',
-    'Iced Matcha':'assets/img/matcha-orange.webp',
-    'Ube Matcha':'assets/img/matcha-orange.webp',
-    'Chakra Sacro':'assets/img/juice-board.webp',
-    'Chakra Raíz':'assets/img/juice-board.webp',
-    'Chakra Corazón':'assets/img/juice-board.webp',
-    'Chakra Manipura':'assets/img/juice-board.webp',
-    'Chakra Tropical':'assets/img/juice-board.webp',
-    'Zumo de Naranja':'assets/img/juice-board.webp',
     'Bowl Açai':'assets/img/bowl-acai.webp',
-    'Bowl Blanco':'assets/img/bowl-berry.webp',
     'Yogurt Natural':'assets/img/bowl-yogurt.webp',
-    'Huevo Benedicto':'assets/img/benedict.webp',
     'Tosta Tricolor':'assets/img/toast-tricolor-horizontal.webp',
     'Tosta Salmón Ahumado':'assets/img/toast-salmon.webp',
     'Croissant Aguacate':'assets/img/croissant-avocado.webp',
     'Tosta de Aguacate':'assets/img/toast-avocado.webp',
     'Tosta Capresse':'assets/img/toast-caprese.webp',
-    'Tosta Jamón Serrano':'assets/img/toast-caprese.webp',
-    'Trío de Huevos':'assets/img/trio-eggs.webp',
-    'Dos Huevitos':'assets/img/toast-avocado.webp',
     'English Breakfast':'assets/img/english-breakfast.webp',
+    'Trío de Huevos':'assets/img/trio-eggs.webp',
     'Pancakes Dulces':'assets/img/pancakes-sweet.webp',
     'Pancakes Salados':'assets/img/pancakes-savory.webp',
     'Menú Combo':'assets/img/combo-board.webp'
   };
 
-  const groupKickers = {
-    cafe:'Cafés y lattes', matcha:'Matcha, ube y tés', bebidas:'Jugos naturales y bebidas', bowls:'Fruta, granola y superfoods',
-    tostas:'Tostas, croissants y sandwiches', huevos:'Brunch con huevo', dulce:'Algo dulce y combos'
-  };
-
   const I18n = window.ChakraI18n || {t:s=>s, language:'es'};
   const tr = source => I18n.t(source);
   const currentLanguage = () => I18n.language || 'es';
-  const tabs = $('#menuTabs'), showcase = $('#menuShowcase'), grid = $('#menuGrid'), count = $('#menuCount'), search = $('#menuSearch'), empty = $('#menuEmpty');
-  let activeCategory = 'all';
 
-  const renderTabs = () => {
-    if (!tabs) return;
-    tabs.replaceChildren();
-    const frag = document.createDocumentFragment();
-    categories.forEach(([key,label]) => {
-      const selected = key === activeCategory;
-      const btn = document.createElement('button');
-      btn.className = 'menu-tab';
-      btn.type = 'button';
-      btn.setAttribute('role','tab');
-      btn.setAttribute('aria-selected',String(selected));
-      btn.dataset.category = key;
-      btn.tabIndex = selected ? 0 : -1;
-      btn.textContent = tr(label);
-      frag.append(btn);
-    });
-    tabs.append(frag);
+  // Premium preloader: roughly four seconds from first script execution.
+  const preloader = $('#preloader');
+  const preloaderPercent = $('#preloaderPercent');
+  const preloaderStart = performance.now();
+  const preloaderHold = reduceMotion ? 700 : 4000;
+  const preloaderProgressDuration = reduceMotion ? 500 : 3700;
+  let preloaderFrame = 0;
+  const paintPreloader = now => {
+    if (!preloader || !preloaderPercent) return;
+    const pct = Math.min(100, Math.round(((now - preloaderStart) / preloaderProgressDuration) * 100));
+    preloaderPercent.textContent = `${pct}%`;
+    if (pct < 100) preloaderFrame = requestAnimationFrame(paintPreloader);
+  };
+  if (preloader && preloaderPercent) preloaderFrame = requestAnimationFrame(paintPreloader);
+
+  let revealStarted = false;
+  const revealEls = $$('[data-reveal]');
+  const initReveal = () => {
+    if (revealStarted) return;
+    revealStarted = true;
+    if ('IntersectionObserver' in window && !reduceMotion) {
+      revealEls.forEach(el => el.classList.add('reveal-pending'));
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          const anim = el.animate([
+            {opacity:0, transform:'translate3d(0,14px,0) scale(.997)'},
+            {opacity:1, transform:'translate3d(0,0,0) scale(1)'}
+          ], {
+            duration:860,
+            easing:'cubic-bezier(.16,.84,.3,1)',
+            fill:'both'
+          });
+          anim.finished.finally(() => el.classList.remove('reveal-pending'));
+          el.classList.add('revealed');
+          io.unobserve(el);
+        });
+      }, {threshold:.08, rootMargin:'0px 0px -6%'});
+      revealEls.forEach(el => io.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('revealed'));
+    }
+  };
+
+  const finishPreloader = () => {
+    if (!preloader || preloader.classList.contains('is-hidden')) return;
+    if (preloaderFrame) cancelAnimationFrame(preloaderFrame);
+    if (preloaderPercent) preloaderPercent.textContent = '100%';
+    preloader.classList.add('is-hidden');
+    document.documentElement.classList.remove('preloading');
+    document.documentElement.classList.add('page-ready');
+    initReveal();
+    setTimeout(() => preloader.classList.add('is-gone'), reduceMotion ? 150 : 620);
+  };
+  setTimeout(finishPreloader, preloaderHold);
+
+  // Header + progress: one visual update per animation frame.
+  const header = $('#siteHeader');
+  const progress = $('#scrollProgress');
+  let scrollFrame = 0;
+  const updateScrollUI = () => {
+    scrollFrame = 0;
+    const y = window.scrollY;
+    header?.classList.toggle('scrolled', y > 24);
+    const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    if (progress) progress.style.transform = `scaleX(${Math.min(1, y / max)})`;
+  };
+  const onScroll = () => { if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScrollUI); };
+  updateScrollUI();
+  addEventListener('scroll', onScroll, {passive:true});
+  addEventListener('resize', onScroll, {passive:true});
+
+  // Desktop mouse-wheel smoothing. Trackpads/touch keep their native high-resolution scrolling.
+  if (!reduceMotion && matchMedia('(pointer:fine)').matches) {
+    let smoothTarget = scrollY, smoothCurrent = scrollY, smoothFrame = 0;
+    const smoothTick = () => {
+      const max = Math.max(0, document.documentElement.scrollHeight - innerHeight);
+      smoothTarget = Math.max(0, Math.min(max, smoothTarget));
+      smoothCurrent += (smoothTarget - smoothCurrent) * .14;
+      scrollTo(0, smoothCurrent);
+      if (Math.abs(smoothTarget - smoothCurrent) > .45) smoothFrame = requestAnimationFrame(smoothTick);
+      else { smoothCurrent = smoothTarget; scrollTo(0, smoothTarget); smoothFrame = 0; }
+    };
+    addEventListener('wheel', e => {
+      if (Math.abs(e.deltaY) < 28 || e.ctrlKey || document.body.classList.contains('modal-open') || document.body.classList.contains('menu-open')) return;
+      if (e.target.closest('.gallery-track-wrap,.menu-showcase,dialog,[data-native-scroll]')) return;
+      e.preventDefault();
+      if (!smoothFrame) { smoothCurrent = scrollY; smoothTarget = scrollY; }
+      smoothTarget += e.deltaY * .9;
+      if (!smoothFrame) smoothFrame = requestAnimationFrame(smoothTick);
+    }, {passive:false});
+    addEventListener('scroll', () => { if (!smoothFrame) smoothTarget = smoothCurrent = scrollY; }, {passive:true});
+  }
+
+  // Active section state for navigation.
+  const navLinks = $$('.desktop-nav a, #mobileMenu nav a');
+  const navSections = ['inicio','filosofia','carta','galeria','visitanos'].map(id => document.getElementById(id)).filter(Boolean);
+  if ('IntersectionObserver' in window && navSections.length) {
+    const navObserver = new IntersectionObserver(entries => {
+      const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      const id = visible.target.id;
+      navLinks.forEach(link => {
+        const active = link.getAttribute('href') === `#${id}`;
+        link.classList.toggle('is-current', active);
+        if (active) link.setAttribute('aria-current','page');
+        else link.removeAttribute('aria-current');
+      });
+    }, {rootMargin:'-30% 0px -58% 0px', threshold:[0,.1,.25]});
+    navSections.forEach(section => navObserver.observe(section));
+  }
+
+  // Mobile menu
+  const menuToggle = $('#menuToggle');
+  const mobileMenu = $('#mobileMenu');
+  const syncMenuLabel = open => menuToggle?.setAttribute('aria-label', tr(open ? 'Cerrar menú' : 'Abrir menú'));
+  const closeMobile = () => {
+    menuToggle?.classList.remove('active');
+    menuToggle?.setAttribute('aria-expanded','false');
+    mobileMenu?.classList.remove('open');
+    mobileMenu?.setAttribute('aria-hidden','true');
+    document.body.classList.remove('menu-open');
+    syncMenuLabel(false);
+  };
+  menuToggle?.addEventListener('click', () => {
+    const willOpen = !mobileMenu.classList.contains('open');
+    menuToggle.classList.toggle('active', willOpen);
+    menuToggle.setAttribute('aria-expanded', String(willOpen));
+    mobileMenu.classList.toggle('open', willOpen);
+    mobileMenu.setAttribute('aria-hidden', String(!willOpen));
+    document.body.classList.toggle('menu-open', willOpen);
+    syncMenuLabel(willOpen);
+  });
+  $$('#mobileMenu a, #mobileMenu .js-reserve').forEach(a => a.addEventListener('click', closeMobile));
+
+  // Canary Islands business status
+  const hours = {
+    Mon:['08:30','19:30'], Tue:['08:30','19:30'], Wed:['08:30','19:30'], Thu:['08:30','19:30'], Fri:['08:30','19:30'],
+    Sat:['08:30','15:00'], Sun:['08:30','15:00']
+  };
+  const canaryParts = () => Object.fromEntries(new Intl.DateTimeFormat('en-GB', {
+    timeZone:'Atlantic/Canary', weekday:'short', year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', hour12:false
+  }).formatToParts(new Date()).filter(x => x.type !== 'literal').map(x => [x.type,x.value]));
+  const minutes = str => { const [h,m] = str.split(':').map(Number); return h*60+m; };
+  const updateStatus = () => {
+    const now = canaryParts();
+    const [open,close] = hours[now.weekday] || ['08:30','19:30'];
+    const current = Number(now.hour)*60 + Number(now.minute);
+    const isOpen = current >= minutes(open) && current < minutes(close);
+    const en = currentLanguage() === 'en';
+    const text = isOpen
+      ? (en ? `Open · until ${close}` : `Abierto · hasta ${close}`)
+      : current < minutes(open)
+        ? (en ? `Opens today · ${open}` : `Abre hoy · ${open}`)
+        : (en ? 'Closed now' : 'Cerrado ahora');
+    const pill = $('#openPill');
+    if (pill) { pill.classList.toggle('closed', !isOpen); $('span',pill).textContent = text; }
+    const visit = $('#visitStatus');
+    if (visit) {
+      visit.textContent = isOpen
+        ? (en ? `Open now · until ${close}` : `Ahora abierto · hasta ${close}`)
+        : current < minutes(open)
+          ? (en ? `Opens today at ${open}` : `Hoy abre a las ${open}`)
+          : (en ? 'Closed · tomorrow from 8:30' : 'Cerrado · mañana desde las 8:30');
+    }
+  };
+  updateStatus();
+  setInterval(updateStatus, 60000);
+
+  // Smooth pointer parallax with interpolation instead of direct jumps.
+  const heroArt = $('#heroArt');
+  if (heroArt && !reduceMotion && matchMedia('(pointer:fine)').matches) {
+    const items = $$('.parallax-item', heroArt);
+    let tx = 0, ty = 0, cx = 0, cy = 0, frame = 0;
+    const tick = () => {
+      cx += (tx - cx) * .075;
+      cy += (ty - cy) * .075;
+      items.forEach(el => {
+        const d = Number(el.dataset.depth || .06);
+        el.style.translate = `${cx*180*d}px ${cy*180*d}px`;
+      });
+      if (Math.abs(tx-cx) > .001 || Math.abs(ty-cy) > .001) frame = requestAnimationFrame(tick);
+      else frame = 0;
+    };
+    const requestTick = () => { if (!frame) frame = requestAnimationFrame(tick); };
+    heroArt.addEventListener('pointermove', e => {
+      const r = heroArt.getBoundingClientRect();
+      tx = (e.clientX-r.left)/r.width - .5;
+      ty = (e.clientY-r.top)/r.height - .5;
+      requestTick();
+    }, {passive:true});
+    heroArt.addEventListener('pointerleave', () => { tx = 0; ty = 0; requestTick(); });
+  }
+
+  // Interactive menu
+  const showcase = $('#menuShowcase'), grid = $('#menuGrid'), count = $('#menuCount'), search = $('#menuSearch'), empty = $('#menuEmpty');
+  let activeCategory = 'all';
+  const normalize = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+
+  const makeTextEl = (tag, className, text) => {
+    const el = document.createElement(tag);
+    if (className) el.className = className;
+    el.textContent = text;
+    return el;
   };
 
   const renderShowcase = () => {
     if (!showcase) return;
     showcase.replaceChildren();
     const frag = document.createDocumentFragment();
-    categories.filter(([key]) => key !== 'all').forEach(([key,label], idx) => {
+    categories.forEach(([key], idx) => {
       const meta = categoryMeta[key];
+      const total = key === 'all' ? menuItems.length : menuItems.filter(item => item.c === key).length;
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = `menu-showcard${key===activeCategory?' is-active':''}`;
       btn.dataset.category = key;
       btn.style.animationDelay = `${idx*40}ms`;
-      const total = menuItems.filter(item => item.c === key).length;
-      btn.innerHTML = `
-        <span class="menu-showcard-media"><img src="${meta.image}" alt="${tr(meta.title)}" loading="lazy" decoding="async"></span>
-        <span class="menu-showcard-copy">
-          <small>${tr(meta.title)}</small>
-          <strong>${tr(meta.intro)}</strong>
-          <em>${total} ${currentLanguage()==='en' ? (total===1?'items':'items') : (total===1?'plato':'platos')}</em>
-        </span>`;
+
+      const media = document.createElement('span');
+      media.className = 'menu-showcard-media';
+      const img = document.createElement('img');
+      img.src = meta.image; img.alt = tr(meta.title); img.loading = 'lazy'; img.decoding = 'async';
+      media.append(img);
+
+      const copy = document.createElement('span');
+      copy.className = 'menu-showcard-copy';
+      copy.append(
+        makeTextEl('small','',tr(meta.title)),
+        makeTextEl('strong','',tr(meta.intro)),
+        makeTextEl('em','', currentLanguage()==='en' ? `${total} items` : `${total} ${total===1?'plato':'platos'}`)
+      );
+      btn.append(media,copy);
       frag.append(btn);
     });
     showcase.append(frag);
@@ -219,55 +398,29 @@
   const createMenuCard = (item, idx = 0) => {
     const article = document.createElement('article');
     article.className = 'menu-card';
-    article.style.animationDelay = `${Math.min(idx, 18)*18}ms`;
-    if (itemThumbs[item.n]) article.classList.add('has-thumb');
+    article.style.animationDelay = `${Math.min(idx,18)*18}ms`;
 
     const top = document.createElement('div');
     top.className = 'menu-card-top';
-    if (itemThumbs[item.n]) {
-      const media = document.createElement('div');
-      media.className = 'menu-thumb';
-      const img = document.createElement('img');
-      img.src = itemThumbs[item.n];
-      img.alt = tr(item.n);
-      img.loading = 'lazy';
-      img.decoding = 'async';
-      media.append(img);
-      top.append(media);
-    } else {
-      const badge = document.createElement('span');
-      badge.className = 'menu-micro-icon';
-      badge.textContent = item.c === 'cafe' ? '☕' : item.c === 'matcha' ? '◌' : item.c === 'bebidas' ? '✦' : item.c === 'bowls' ? '◎' : item.c === 'tostas' ? '↗' : item.c === 'huevos' ? '◔' : '✳';
-      top.append(badge);
-    }
+    const exactImage = itemThumbs[item.n];
+    const imageSrc = exactImage || categoryMeta[item.c]?.image || 'assets/img/logo-circle.webp';
+    article.classList.add('has-thumb');
+    if (!exactImage) article.classList.add('uses-category-image');
+    const media = document.createElement('div'); media.className = 'menu-thumb';
+    const img = document.createElement('img');
+    img.src=imageSrc;
+    img.alt=exactImage ? tr(item.n) : `${tr(categoryMeta[item.c]?.title || 'Carta Chakra')}`;
+    img.loading='lazy'; img.decoding='async';
+    media.append(img); top.append(media);
 
-    const head = document.createElement('div');
-    head.className = 'menu-card-head';
-    const title = document.createElement('h4');
-    title.textContent = tr(item.n);
-    const price = document.createElement('strong');
-    price.textContent = item.p;
-    head.append(title, price);
-    top.append(head);
-    article.append(top);
+    const head = document.createElement('div'); head.className='menu-card-head';
+    head.append(makeTextEl('h4','',tr(item.n)), makeTextEl('strong','',item.p));
+    top.append(head); article.append(top);
+    if (item.d) article.append(makeTextEl('p','',tr(item.d)));
 
-    if (item.d) {
-      const desc = document.createElement('p');
-      desc.textContent = tr(item.d);
-      article.append(desc);
-    }
-
-    const footer = document.createElement('div');
-    footer.className = 'menu-card-footer';
-    const kicker = document.createElement('span');
-    kicker.textContent = tr(groupKickers[item.c] || 'Carta Chakra');
-    footer.append(kicker);
-    if (item.t) {
-      const tag = document.createElement('b');
-      tag.className = 'item-tag';
-      tag.textContent = tr(item.t);
-      footer.append(tag);
-    }
+    const footer = document.createElement('div'); footer.className='menu-card-footer';
+    footer.append(makeTextEl('span','',tr(groupKickers[item.c] || 'Carta Chakra')));
+    if (item.t) footer.append(makeTextEl('b','item-tag',tr(item.t)));
     article.append(footer);
     return article;
   };
@@ -276,95 +429,66 @@
     if (!grid) return;
     const q = normalize(search?.value.trim() || '');
     const filtered = menuItems.filter(item => {
-      const inCategory = activeCategory === 'all' || item.c === activeCategory;
+      const inCategory = q ? true : (activeCategory==='all' || item.c===activeCategory);
       const searchable = `${item.n} ${item.d||''} ${tr(item.n)} ${tr(item.d||'')}`;
       return inCategory && (!q || normalize(searchable).includes(q));
     });
 
     const groups = new Map();
     filtered.forEach(item => {
-      if (!groups.has(item.c)) groups.set(item.c, []);
+      if (!groups.has(item.c)) groups.set(item.c,[]);
       groups.get(item.c).push(item);
     });
 
+    const ordered = (activeCategory==='all' ? categories.filter(([key])=>key!=='all').map(([key])=>key) : [activeCategory]).filter(key=>groups.has(key));
     const frag = document.createDocumentFragment();
-    const orderedGroups = (activeCategory === 'all' ? categories.filter(([k])=>k!=='all').map(([k])=>k) : [activeCategory])
-      .filter(key => groups.has(key));
 
-    orderedGroups.forEach((key, groupIndex) => {
+    ordered.forEach((key, groupIndex) => {
       const meta = categoryMeta[key];
-      const section = document.createElement('section');
-      section.className = 'menu-group';
-      section.dataset.category = key;
-      section.style.animationDelay = `${groupIndex*40}ms`;
+      const section = document.createElement('section'); section.className='menu-group'; section.dataset.category=key; section.style.animationDelay=`${groupIndex*40}ms`;
+      const head = document.createElement('div'); head.className='menu-group-head';
+      const copy = document.createElement('div'); copy.className='menu-group-copy';
+      copy.append(
+        makeTextEl('small','',tr(groupKickers[key])),
+        makeTextEl('h3','',tr(meta.title)),
+        makeTextEl('p','',tr(meta.intro)),
+        makeTextEl('em','',tr(meta.note))
+      );
+      const visual = document.createElement('div'); visual.className='menu-group-visual';
+      const img = document.createElement('img'); img.src=meta.image; img.alt=tr(meta.title); img.loading='lazy'; img.decoding='async'; visual.append(img);
+      head.append(copy,visual); section.append(head);
 
-      const head = document.createElement('div');
-      head.className = 'menu-group-head';
-      head.innerHTML = `
-        <div class="menu-group-copy">
-          <small>${tr(groupKickers[key])}</small>
-          <h3>${tr(meta.title)}</h3>
-          <p>${tr(meta.intro)}</p>
-          <em>${tr(meta.note)}</em>
-        </div>
-        <div class="menu-group-visual">
-          <img src="${meta.image}" alt="${tr(meta.title)}" loading="lazy" decoding="async">
-        </div>`;
-      section.append(head);
-
-      const cards = document.createElement('div');
-      cards.className = 'menu-cards';
-      groups.get(key).forEach((item, itemIndex) => cards.append(createMenuCard(item, itemIndex)));
-      section.append(cards);
-      frag.append(section);
+      const cards = document.createElement('div'); cards.className='menu-cards';
+      groups.get(key).forEach((item,itemIndex)=>cards.append(createMenuCard(item,itemIndex)));
+      section.append(cards); frag.append(section);
     });
 
     grid.replaceChildren(frag);
     renderShowcase();
-    if (count) {
-      count.textContent = currentLanguage()==='en'
-        ? `${filtered.length} ${filtered.length===1?'item visible':'items visible'}`
-        : `${filtered.length} ${filtered.length===1?'opción visible':'opciones visibles'}`;
-    }
+    if (count) count.textContent = currentLanguage()==='en'
+      ? `${filtered.length} ${filtered.length===1?'item visible':'items visible'}`
+      : `${filtered.length} ${filtered.length===1?'opción visible':'opciones visibles'}`;
     if (empty) empty.hidden = filtered.length !== 0;
   };
 
   const selectCategory = key => {
     if (!key) return;
     activeCategory = key;
-    renderTabs();
     renderMenu();
   };
-
-  const selectTab = btn => {
-    if (!btn?.dataset.category) return;
-    selectCategory(btn.dataset.category);
-  };
-  tabs?.addEventListener('click', e => { const btn=e.target.closest('.menu-tab'); if(btn) selectTab(btn); });
-  tabs?.addEventListener('keydown', e => {
-    if (!['ArrowLeft','ArrowRight','Home','End'].includes(e.key)) return;
-    const arr = $$('.menu-tab',tabs), idx = arr.indexOf(document.activeElement); if (idx < 0) return;
-    e.preventDefault();
-    const nextIndex = e.key==='Home' ? 0 : e.key==='End' ? arr.length-1 : (idx + (e.key==='ArrowRight'?1:-1) + arr.length)%arr.length;
-    arr[nextIndex].focus(); selectTab(arr[nextIndex]);
-  });
   showcase?.addEventListener('click', e => {
-    const card = e.target.closest('.menu-showcard');
-    if (!card) return;
+    const card=e.target.closest('.menu-showcard'); if(!card) return;
     selectCategory(card.dataset.category);
-    document.getElementById('menuGrid')?.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block:'start'});
+    grid?.scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'start'});
   });
-
-  renderTabs(); renderMenu();
-  let searchFrame = 0;
-  search?.addEventListener('input', () => {
-    if (searchFrame) cancelAnimationFrame(searchFrame);
+  renderMenu();
+  let searchFrame=0;
+  search?.addEventListener('input',()=>{
+    if(searchFrame) cancelAnimationFrame(searchFrame);
     searchFrame=requestAnimationFrame(()=>{searchFrame=0;renderMenu();});
   });
-  $('#clearSearch')?.addEventListener('click', () => {
-    search.value=''; activeCategory='all';
-    renderTabs(); renderMenu();
-    search.focus();
+  $('#clearSearch')?.addEventListener('click',()=>{
+    if(search) search.value=''; activeCategory='all'; renderMenu(); search?.focus();
   });
 
   // "What do you feel like?" recommender.
@@ -372,7 +496,7 @@
     coffee:{image:'assets/img/latte.webp', title:'Flat White & calma', text:'Café 100% arábico, textura cremosa y un momento para bajar el ritmo.', alt:'Café latte de Chakra', category:'cafe'},
     fresh:{image:'assets/img/matcha-orange.webp', title:'Chakra Corazón & frescura', text:'Naranja, mango y chía para un chute fresco, frutal y luminoso.', alt:'Matcha y bebida de naranja', category:'bebidas'},
     sweet:{image:'assets/img/pancakes-sweet.webp', title:'Pancakes & capricho', text:'Fruta, almendras y tu topping favorito para ese día que pide algo dulce.', alt:'Pancakes dulces con fruta', category:'dulce'},
-    savory:{image:'assets/img/toast-tricolor.webp', title:'Tosta Tricolor & brunch', text:'Tres hummus, masa madre y kalamata: color, textura y un bocado salado muy Chakra.', alt:'Tosta tricolor', category:'tostas'}
+    savory:{image:'assets/img/toast-tricolor-horizontal.webp', title:'Tosta Tricolor & brunch', text:'Tres hummus, masa madre y kalamata: color, textura y un bocado salado muy Chakra.', alt:'Tosta tricolor', category:'tostas'}
   };
   let currentMood = 'coffee';
   const moodImage = $('#moodImage'), moodTitle = $('#moodTitle'), moodText = $('#moodText'), moodKicker = $('#moodKicker'), moodAction = $('#moodAction');
@@ -400,7 +524,7 @@
   moodAction?.addEventListener('click', () => {
     activeCategory = moodAction.dataset.category || 'all';
     if (search) search.value='';
-    renderTabs(); renderMenu();
+    renderMenu();
   });
   applyMood(currentMood, false);
 
@@ -546,7 +670,7 @@
 
   // Keep dynamic UI in sync when the visitor switches language.
   document.addEventListener('chakra:language', () => {
-    renderTabs(); renderMenu(); updateStatus(); applyMood(currentMood,false);
+    renderMenu(); updateStatus(); applyMood(currentMood,false);
     syncMenuLabel(mobileMenu?.classList.contains('open'));
     if (galleryModal?.open) updateGalleryModal();
   });

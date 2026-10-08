@@ -1,17 +1,18 @@
 'use strict';
 
-const CACHE = 'chakra-v4';
+const CACHE = 'chakra-v6';
 const CORE = [
   './',
   './index.html',
-  './styles.css?v=4.0.0',
-  './i18n.js?v=4.0.0',
-  './app.js?v=4.0.0',
+  './styles.css?v=6.0.0',
+  './i18n.js?v=6.0.0',
+  './app.js?v=6.0.0',
   './manifest.webmanifest',
   './assets/img/logo-circle.webp',
   './assets/img/juice-board.webp',
   './assets/img/latte.webp',
   './assets/img/pancakes-savory.webp',
+  './assets/img/toast-tricolor-horizontal.webp',
   './assets/img/favicon-64.png'
 ];
 

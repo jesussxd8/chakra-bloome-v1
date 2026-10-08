@@ -224,3 +224,271 @@ html{scrollbar-gutter:stable}html.preloading,html.preloading body{overflow:hidde
   .philo-highlight,.philo-close{font-size:24px}
   .philo-text-block{padding:22px}
 }
+
+/* ========================================================================== 
+   V6 — stable responsive hero + editorial philosophy + single visual menu nav
+   ========================================================================== */
+
+/* HERO: grid-based composition so product photography never stretches */
+.hero-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:center}
+.hero-art-v6{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(160px,.38fr);
+  grid-template-rows:1fr 1fr;
+  gap:14px;
+  width:100%;
+  height:auto;
+  min-height:0;
+  max-height:none;
+  aspect-ratio:1.08/1;
+  isolation:isolate;
+}
+.hero-main-visual,.hero-side-visual{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(47,40,35,.09);
+  box-shadow:0 24px 60px rgba(55,35,24,.11);
+}
+.hero-main-visual{
+  grid-column:1;
+  grid-row:1/3;
+  border-radius:42% 28% 36% 24%/24% 35% 27% 38%;
+  background:linear-gradient(145deg,#e8d0ba 0%,#d9b08f 55%,#c78d69 100%);
+  display:grid;
+  place-items:center;
+  padding:5%;
+}
+.hero-media-glow{position:absolute;inset:10%;border-radius:50%;background:rgba(255,249,239,.35);filter:blur(35px);pointer-events:none}
+.hero-main-visual img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  transform:scale(1.08);
+  filter:drop-shadow(0 24px 23px rgba(63,39,27,.17));
+  z-index:1;
+}
+.hero-media-label{
+  position:absolute;left:24px;bottom:22px;z-index:2;
+  padding:8px 11px;border-radius:999px;background:rgba(251,245,236,.88);
+  backdrop-filter:blur(10px);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+}
+.hero-side-visual{
+  border-radius:26px;
+  background:rgba(255,250,243,.72);
+  display:grid;
+  place-items:center;
+  padding:14px;
+}
+.hero-side-latte{grid-column:2;grid-row:1;background:#c7b18e}
+.hero-side-pancakes{grid-column:2;grid-row:2;background:#d9a07f}
+.hero-side-visual img{width:94%;height:84%;object-fit:contain;object-position:center;filter:drop-shadow(0 16px 18px rgba(63,39,27,.15));transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.hero-side-visual:hover img{transform:scale(1.04) rotate(1.5deg)}
+.hero-side-visual span{position:absolute;left:14px;bottom:12px;padding:6px 9px;border-radius:999px;background:rgba(255,250,243,.86);font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:800}
+.hero-stamp-v6{
+  position:absolute;right:19%;top:45%;z-index:4;width:104px;height:104px;border-radius:50%;
+  background:var(--terracotta);color:#fff7ef;display:grid;place-content:center;text-align:center;
+  box-shadow:0 18px 38px rgba(132,57,31,.25);transform:rotate(7deg);
+}
+.hero-stamp-v6 b{font-family:var(--serif);font-size:18px;font-weight:400;letter-spacing:.03em}
+.hero-stamp-v6 small{font-size:7px;letter-spacing:.14em;margin-top:2px}
+.hero-note-v6{left:3%;bottom:4%;z-index:4}
+
+/* PHILOSOPHY: brand story directly after the hero */
+.philosophy-v6{position:relative;overflow:hidden;background:linear-gradient(180deg,#f7ebdd 0%,#fbf5ec 46%,#efe0cf 100%);padding-top:130px;padding-bottom:132px}
+.philosophy-word{position:absolute;top:58px;right:-2vw;font-family:var(--serif);font-size:clamp(120px,21vw,330px);line-height:.7;letter-spacing:-.08em;color:rgba(187,84,47,.045);white-space:nowrap;pointer-events:none}
+.philosophy-opening{position:relative;display:grid;grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr);gap:58px;align-items:center;margin-bottom:76px;z-index:1}
+.philosophy-opening-copy{position:relative;padding:18px 0}
+.philosophy-index{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--terracotta);margin:0 0 18px}
+.philosophy-v6 h2{font-size:clamp(62px,7vw,106px);margin:0 0 26px;line-height:.88;letter-spacing:-.055em}
+.philosophy-v6 h2 em{color:var(--terracotta);font-weight:400}
+.philosophy-bigline{font-family:var(--serif);font-size:clamp(25px,2.6vw,40px);line-height:1.06;max-width:570px;margin:0;color:var(--ink)}
+.philosophy-opening-art{position:relative;min-height:570px}
+.ph-image{position:absolute;margin:0;border-radius:30px;background:#fff8ef;border:1px solid rgba(47,40,35,.08);box-shadow:0 30px 65px rgba(59,38,25,.11);display:grid;place-items:center;overflow:hidden}
+.ph-image img{width:90%;height:90%;object-fit:contain;filter:drop-shadow(0 18px 18px rgba(56,37,25,.13))}
+.ph-image-main{width:62%;height:64%;left:4%;top:20%;background:#b8b990;transform:rotate(-5deg);z-index:2}
+.ph-image-latte{width:38%;height:42%;right:4%;top:3%;background:#d6b893;transform:rotate(4deg);z-index:3}
+.ph-image-matcha{width:35%;height:46%;right:7%;bottom:2%;background:#d99f7a;transform:rotate(7deg);z-index:4}
+.philosophy-handnote{position:absolute;right:3%;top:48%;z-index:5;font-family:var(--serif);font-size:20px;font-style:italic;line-height:1.05;color:var(--terracotta-dark);transform:rotate(-6deg);text-align:center}
+.philosophy-story{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px;position:relative;z-index:1}
+.ph-story-card{position:relative;border-radius:28px;padding:34px;background:rgba(255,250,243,.8);border:1px solid rgba(47,40,35,.09);box-shadow:0 20px 48px rgba(55,35,24,.055);overflow:hidden}
+.ph-story-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(47,40,35,.18);font-size:10px;font-weight:800;margin-bottom:26px}
+.ph-story-list{grid-column:span 4;background:#efe0cd}
+.ph-story-list p{font-family:var(--serif);font-size:26px;line-height:1.12;margin:0 0 12px}
+.ph-story-list .ph-story-turn{font-family:var(--sans);font-size:13px;line-height:1.5;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--terracotta-dark);margin-top:30px}
+.ph-story-claim{grid-column:span 8;min-height:430px;background:var(--terracotta);color:#fff7ef;padding-right:39%}
+.ph-story-claim>p{font-size:11px;letter-spacing:.14em;font-weight:800;margin:0 0 8px;text-transform:uppercase}
+.ph-story-claim h3{font-size:clamp(48px,5vw,76px);line-height:.88;letter-spacing:-.055em;margin:0;max-width:660px}
+.ph-story-claim figure{position:absolute;right:1%;bottom:-5%;width:40%;height:92%;margin:0;display:grid;place-items:center}
+.ph-story-claim figure img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 18px 20px rgba(70,25,12,.18))}
+.ph-story-need{grid-column:span 7;background:#fffaf3}
+.ph-story-need>p{font-size:16px;color:var(--muted);max-width:620px}
+.ph-story-need blockquote{font-family:var(--serif);font-size:clamp(40px,4.5vw,68px);line-height:.95;letter-spacing:-.04em;margin:24px 0 34px;color:var(--terracotta-dark)}
+.ph-need-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ph-need-grid p{margin:0;padding:16px 17px;border-radius:18px;background:var(--paper);font-size:13px;line-height:1.5}
+.ph-story-discover{grid-column:span 5;background:var(--sage);display:grid;grid-template-columns:.78fr 1.22fr;gap:18px;align-items:center;padding:24px}
+.ph-story-discover .ph-story-number{margin-bottom:14px}
+.ph-story-discover p{font-family:var(--serif);font-size:21px;line-height:1.13;margin:0 0 15px}
+.ph-discover-art{height:100%;min-height:320px;border-radius:22px;background:rgba(255,250,243,.35);display:grid;place-items:center;overflow:hidden}
+.ph-discover-art img{width:94%;height:94%;object-fit:contain;filter:drop-shadow(0 18px 18px rgba(47,40,35,.13))}
+.ph-story-words{grid-column:span 5;background:var(--ink);color:var(--white);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;min-height:360px}
+.ph-story-words span{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,250,243,.55);margin-bottom:18px}
+.ph-story-words strong{font-family:var(--serif);font-weight:400;font-size:clamp(50px,5vw,78px);line-height:.92;letter-spacing:-.05em}
+.ph-story-final{grid-column:span 7;background:#f6d9c4;min-height:360px}
+.ph-story-final>p{font-size:15px;line-height:1.55;max-width:650px}
+.ph-story-final>p:nth-of-type(2){font-family:var(--serif);font-size:30px;color:var(--terracotta-dark);margin-top:26px}
+.ph-story-final h3{font-size:clamp(38px,4vw,58px);line-height:.96;letter-spacing:-.045em;margin:28px 0 30px;max-width:720px}
+
+/* EXPERIENCE: the second card is now a real visual item instead of a duplicate philosophy card */
+.feature-tricolor img{width:90%;height:78%;object-fit:contain;filter:drop-shadow(0 18px 20px rgba(55,35,24,.13))}
+
+/* MENU: one visual category navigator only */
+.menu-section{padding-top:126px}
+.menu-showcase{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+  margin:8px 0 36px;
+}
+.menu-showcard{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:0;
+  min-width:0;
+  min-height:286px;
+  padding:0;
+  border-radius:26px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.07);
+  color:var(--white);
+  text-align:left;
+  transition:transform .3s ease,background .3s ease,border-color .3s ease,box-shadow .3s ease;
+}
+.menu-showcard:hover{transform:translateY(-5px);background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.3);box-shadow:0 22px 42px rgba(0,0,0,.12)}
+.menu-showcard.is-active{background:var(--white);color:var(--ink);border-color:var(--white);box-shadow:0 22px 50px rgba(0,0,0,.16)}
+.menu-showcard-media{width:100%;height:145px;border-radius:0;background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.04));display:grid;place-items:center;overflow:hidden}
+.menu-showcard.is-active .menu-showcard-media{background:var(--paper)}
+.menu-showcard-media img{width:82%;height:82%;object-fit:contain;filter:drop-shadow(0 14px 15px rgba(0,0,0,.14));transition:transform .35s ease}
+.menu-showcard:hover .menu-showcard-media img{transform:scale(1.045) rotate(1deg)}
+.menu-showcard-copy{display:grid;gap:8px;padding:18px 18px 20px;line-height:1.25;min-height:135px}
+.menu-showcard-copy small{font-family:var(--serif);font-size:25px;line-height:1;font-weight:400;letter-spacing:-.03em;text-transform:none;color:inherit}
+.menu-showcard-copy strong{font-family:var(--sans);font-size:11px;line-height:1.5;font-weight:500;letter-spacing:0;color:rgba(255,255,255,.68)}
+.menu-showcard.is-active .menu-showcard-copy strong{color:var(--muted)}
+.menu-showcard-copy em{font-style:normal;font-size:9px;letter-spacing:.11em;text-transform:uppercase;font-weight:800;color:rgba(255,255,255,.5);margin-top:auto}
+.menu-showcard.is-active .menu-showcard-copy em{color:rgba(47,40,35,.5)}
+.menu-results-meta{padding-top:20px}
+.menu-grid{display:grid;grid-template-columns:1fr;gap:30px}
+.menu-group{padding:26px;border-radius:30px}
+.menu-group-head{grid-template-columns:minmax(0,1.2fr) minmax(220px,.8fr);gap:26px;margin-bottom:22px}
+.menu-group-visual{min-height:225px;background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.04))}
+.menu-group-visual img{width:86%;height:86%;object-fit:contain}
+.menu-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.menu-card{min-height:190px;padding:15px 15px 16px;border-radius:22px}
+.menu-card-top{grid-template-columns:80px 1fr;gap:13px;align-items:center}
+.menu-thumb{width:80px;height:80px;border-radius:18px;flex-shrink:0}
+.menu-thumb img{width:88%;height:88%;object-fit:contain}
+.menu-card.uses-category-image .menu-thumb{background:#eee1d1}
+.menu-card.uses-category-image .menu-thumb img{width:80%;height:80%;opacity:.92}
+.menu-card-head{display:grid;gap:6px}
+.menu-card-head h4{font-size:24px}
+.menu-card-head strong{padding:0;color:var(--terracotta-dark)}
+
+/* Keep the horizontal Tosta Tricolor clearly horizontal wherever it appears */
+.dish-card-b .dish-visual{aspect-ratio:1.3/1}
+.dish-card-b .dish-visual img{width:97%;height:97%;object-fit:contain;transform:none}
+.dish-card-b:hover .dish-visual img{transform:scale(1.04)}
+
+@media (max-width:1100px){
+  .hero-grid{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:30px}
+  .hero-stamp-v6{right:18%;width:88px;height:88px}
+  .menu-showcase{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .menu-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .philosophy-opening{gap:30px}
+  .philosophy-opening-art{min-height:500px}
+  .ph-story-list{grid-column:span 5}.ph-story-claim{grid-column:span 7;padding-right:34%}
+  .ph-story-need{grid-column:span 7}.ph-story-discover{grid-column:span 5}
+}
+
+@media (max-width:760px){
+  .hero{padding-top:96px}
+  .hero-grid{grid-template-columns:1fr;gap:26px}
+  .hero-art-v6{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:minmax(300px,1.35fr) minmax(150px,.65fr);
+    aspect-ratio:auto;
+    min-height:470px;
+    gap:10px;
+    margin-top:8px;
+  }
+  .hero-main-visual{grid-column:1/3;grid-row:1;border-radius:30px;padding:3%}
+  .hero-main-visual img{transform:scale(1.03)}
+  .hero-media-label{left:14px;bottom:12px;font-size:8px}
+  .hero-side-latte{grid-column:1;grid-row:2}.hero-side-pancakes{grid-column:2;grid-row:2}
+  .hero-side-visual{border-radius:20px;padding:8px}
+  .hero-side-visual span{font-size:7px;left:9px;bottom:8px}
+  .hero-stamp-v6{right:5%;top:48%;width:78px;height:78px}
+  .hero-stamp-v6 b{font-size:15px}.hero-stamp-v6 small{font-size:6px}
+  .hero-note-v6{left:3%;bottom:34%;max-width:190px}
+
+  .philosophy-v6{padding-top:92px;padding-bottom:92px}
+  .philosophy-word{top:44px;font-size:38vw}
+  .philosophy-opening{grid-template-columns:1fr;gap:26px;margin-bottom:44px}
+  .philosophy-v6 h2{font-size:clamp(58px,17vw,88px)}
+  .philosophy-bigline{font-size:28px}
+  .philosophy-opening-art{min-height:420px}
+  .ph-image-main{width:66%;height:62%;left:1%;top:22%}
+  .ph-image-latte{width:39%;height:39%;right:1%;top:2%}
+  .ph-image-matcha{width:38%;height:43%;right:3%;bottom:0}
+  .philosophy-handnote{right:3%;top:47%;font-size:16px}
+  .philosophy-story{grid-template-columns:1fr;gap:12px}
+  .ph-story-list,.ph-story-claim,.ph-story-need,.ph-story-discover,.ph-story-words,.ph-story-final{grid-column:1}
+  .ph-story-card{padding:26px;border-radius:24px}
+  .ph-story-claim{padding-right:42%;min-height:390px}
+  .ph-story-claim h3{font-size:50px}
+  .ph-story-claim figure{width:45%}
+  .ph-need-grid{grid-template-columns:1fr}
+  .ph-story-discover{grid-template-columns:1fr 1.15fr}
+  .ph-story-words{min-height:300px}
+
+  .menu-showcase{
+    display:flex;
+    overflow-x:auto;
+    gap:12px;
+    margin-inline:calc(-1 * (100vw - var(--shell))/2);
+    padding:2px calc((100vw - var(--shell))/2) 18px;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    overscroll-behavior-inline:contain;
+  }
+  .menu-showcase::-webkit-scrollbar{display:none}
+  .menu-showcard{flex:0 0 min(82vw,310px);min-height:275px;scroll-snap-align:start}
+  .menu-showcard-media{height:140px}
+  .menu-group{padding:18px;border-radius:24px}
+  .menu-group-head{grid-template-columns:1fr;gap:16px}
+  .menu-group-visual{min-height:180px}
+  .menu-cards{grid-template-columns:1fr}
+  .menu-card{min-height:0}
+  .menu-card-top{grid-template-columns:76px 1fr}
+  .menu-thumb{width:76px;height:76px}
+}
+
+@media (max-width:430px){
+  .hero-art-v6{grid-template-rows:minmax(270px,1.3fr) minmax(138px,.7fr);min-height:430px}
+  .hero-note-v6{display:none}
+  .philosophy-opening-art{min-height:370px}
+  .philosophy-handnote{display:none}
+  .ph-story-claim{padding-right:34%;min-height:360px}
+  .ph-story-claim h3{font-size:43px}
+  .ph-story-claim figure{width:46%;opacity:.94}
+  .ph-story-discover{grid-template-columns:1fr}
+  .ph-discover-art{min-height:220px}
+  .menu-card-head h4{font-size:22px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .hero-side-visual img,.menu-showcard,.menu-showcard-media img,.dish-card-b .dish-visual img{transition:none!important}
+}
+@media (max-width:760px){.hero-leaf{display:none!important}}
